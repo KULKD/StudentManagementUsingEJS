@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is Employee Management System</h1>
+    <form action="/insert" method="get">
+   <button type="submit" name="add" id="add" value="add">Add New product</button>
+    <button type="submit" name="add" id="find" value="find">Find by id</button>
+    <button type="submit" name="add" id="show" value="show">Show Table</button>
+    </form>
+    <div>
+        <table border="2">
+        <tr>
+            <th>Product id</th>
+            <th>Name</th>
+            <th>qty</th>
+            <th>price</th>
+            <th>action</th>
+        </tr>
+        <% for(var i=0;i<empdata.length;i++){%>
+           <tr>
+                <td><%=empdata[i].empid%></td>
+                <td><%=empdata[i].ename%></td>
+                <td><%=empdata[i].age%></td>
+                <td><%=empdata[i].salary%></td>
+                <td><a href="/deletemp/<%=empdata[i].empid%>">delete</a></td>
+                
+            </tr>
+        <%}%>
+    </table>
+    
+</div>
+</body>
+</html>
